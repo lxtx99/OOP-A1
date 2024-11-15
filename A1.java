@@ -59,3 +59,26 @@ class GeneralPractitioner extends HealthProfessional {
         System.out.println("BusinessScope: " + BusinessScope);
     }
 }
+class Other extends HealthProfessional {
+    private String specialty;  // 修改实例变量名为 specialty
+
+    // 默认构造函数
+    public Other() {
+        super();  // 调用基类的默认构造函数
+        this.specialty = "Unknown Specialty";  // 默认值
+    }
+
+    // 带参数的构造函数
+    public Other(int ID, String name, String doctorType, String specialty) {
+        super(ID, name, doctorType);  // 调用基类的带参数构造函数
+        this.specialty = specialty;
+    }
+
+    // 打印卫生专业人员详细信息的方法
+    @Override
+    public void printHealthProfessionalInfo() {
+        super.printHealthProfessionalInfo();  // 调用基类的打印方法
+        System.out.println("Specialty: " + specialty);  // 打印专家的专业领域
+    }
+}
+
