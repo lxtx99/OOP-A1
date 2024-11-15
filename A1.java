@@ -33,5 +33,29 @@ class HealthProfessional {
         System.out.println("ID: " + ID);
         System.out.println("Name: " + name);
         System.out.println("Doctor Type: " + doctorType);
+        System.out.println("Health Professional Details:");
+    }
+}
+
+class GeneralPractitioner extends HealthProfessional {
+    private String BusinessScope;  // 新增的实例变量，用于区分全科医生的服务领域
+
+    // 默认构造函数
+    public GeneralPractitioner() {
+        super();  // 调用基类默认构造函数
+        this.BusinessScope = "General Medicine";
+    }
+
+    // 带参数的构造函数
+    public GeneralPractitioner(int ID, String name, String doctorType, String BusinessScope) {
+        super(ID, name, doctorType);  // 调用基类构造函数
+        this.BusinessScope = BusinessScope;
+    }
+
+    // 打印卫生专业人员详细信息的方法
+    @Override
+    public void printHealthProfessionalInfo() {
+        super.printHealthProfessionalInfo();  // 调用基类的打印方法
+        System.out.println("BusinessScope: " + BusinessScope);
     }
 }
