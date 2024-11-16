@@ -106,4 +106,39 @@ class Other extends HealthProfessional {
         System.out.println("Specialty: " + specialty);  // 打印专家的专业领域
     }
 }
+class Appointment {
+    // 实例变量
+    private String patientName;       // 患者姓名
+    private String patientPhone;      // 患者手机号
+    private String preferredTime;     // 首选时间段
+    private HealthProfessional doctor; // 选定的医生
 
+    // 默认构造函数
+    public Appointment() {
+        this.patientName = "Unknown";
+        this.patientPhone = "Unknown";
+        this.preferredTime = "08:00"; // 默认时间
+        this.doctor = null;           // 默认没有选定医生
+    }
+
+    // 带参数的构造函数
+    public Appointment(String patientName, String patientPhone, String preferredTime, HealthProfessional doctor) {
+        this.patientName = patientName;
+        this.patientPhone = patientPhone;
+        this.preferredTime = preferredTime;
+        this.doctor = doctor;
+    }
+
+    // 打印预约信息的方法
+    public void printAppointmentInfo() {
+        System.out.println("Patient Name: " + patientName);
+        System.out.println("Patient Phone: " + patientPhone);
+        System.out.println("Preferred Time: " + preferredTime);
+        System.out.println("Doctor Information:");
+        if (doctor != null) {
+            doctor.printHealthProfessionalInfo();  // 打印医生的信息
+        } else {
+            System.out.println("No doctor selected.");
+        }
+    }
+}
