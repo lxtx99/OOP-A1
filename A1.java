@@ -4,7 +4,32 @@
  */
 public class A1 {
     public static void main(String[] args) {
-        System.out.println("Hello, this is my A1!");
+        // Part 3 – Using classes and objects 
+
+        // 创建第一个全科医生对象
+        GeneralPractitioner gp1 = new GeneralPractitioner(101, "Dr.Liu", "General Practitioner", "Outpatient Doctor");
+        System.out.println("------------------------------");
+        gp1.printHealthProfessionalInfo();
+
+        // 创建第二个全科医生对象
+        GeneralPractitioner gp2 = new GeneralPractitioner(102, "Dr.Lin", "General Practitioner", "Family Doctor");
+        System.out.println("------------------------------");
+        gp2.printHealthProfessionalInfo();
+
+        // 创建第三个全科医生对象
+        GeneralPractitioner gp3 = new GeneralPractitioner(103, "Dr.Jack", "General Practitioner", "Surgeon");
+        System.out.println("------------------------------");
+        gp3.printHealthProfessionalInfo();
+
+        // 创建第一个其他类型的卫生专业人员对象
+        Other other1 = new Other(201, "Dr.Zhang", "Other", "Nurse");
+        System.out.println("------------------------------");
+        other1.printHealthProfessionalInfo();
+
+        // 创建第二个其他类型的卫生专业人员对象
+        Other other2 = new Other(202, "Dr.Han", "Other", "Nutritionist");
+        System.out.println("------------------------------");
+        other2.printHealthProfessionalInfo();
     }
 }
 class HealthProfessional {
