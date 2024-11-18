@@ -2,6 +2,9 @@
  * Name:Haonan Liu
  * Student ID:24516785
  */
+
+import java.util.ArrayList;
+
 public class AssignmentOne {
     public static void main(String[] args) {
         // Part 3 – Using classes and objects 
@@ -31,7 +34,11 @@ public class AssignmentOne {
         System.out.println("------------------------------");
         other2.printHealthProfessionalInfo();
 
-        
+        // Part 5 – Collection of appointments
+        System.out.println("------------------------------");
+
+        // Declare an ArrayList to store appointments
+        ArrayList<Appointment> appointments = new ArrayList<>();
     }
 }
 class HealthProfessional {
