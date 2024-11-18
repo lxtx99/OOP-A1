@@ -184,6 +184,7 @@ class Appointment {
         this.preferredTime = preferredTime;
         this.doctor = doctor;
     }
+    
     public String getPatientName() {
         return patientName;
     }
@@ -191,6 +192,14 @@ class Appointment {
     public String getPatientPhone() {
         return patientPhone;
     }
+
+    public void setPatientName(String patientName, String patientPhone, String preferredTime, HealthProfessional doctor) {
+        this.patientName = patientName;
+        this.patientPhone = patientPhone;
+        this.preferredTime = preferredTime;
+        this.doctor = doctor;
+    }
+
 
     // Method to print the appointment details
     public void printAppointmentDetails() {
