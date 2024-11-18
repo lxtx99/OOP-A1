@@ -39,6 +39,17 @@ public class AssignmentOne {
 
         // Declare an ArrayList to store appointments
         ArrayList<Appointment> appointments = new ArrayList<>();
+        
+    }
+    // Method to create a new appointment and add it to the ArrayList
+    public static void createAppointment(ArrayList<Appointment> appointments, String patientName, String patientPhone, String preferredTime, HealthProfessional doctor) {
+        if (patientName == null || patientPhone == null || preferredTime == null || doctor == null) {
+            System.out.println("Error: Missing information, unable to create appointment.");
+        } else {
+            Appointment newAppointment = new Appointment(patientName, patientPhone, preferredTime, doctor);
+            appointments.add(newAppointment);
+            System.out.println("Appointment created successfully for " + patientName + " with " + doctor.getName() + " at " + preferredTime);
+        }
     }
 }
 class HealthProfessional {
