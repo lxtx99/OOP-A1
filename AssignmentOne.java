@@ -2,10 +2,10 @@
  * Name:Haonan Liu
  * Student ID:24516785
  */
-public class A1 {
+public class AssignmentOne {
     public static void main(String[] args) {
         // Part 3 – Using classes and objects 
-
+        System.out.println("------------------------------");
         // 创建第一个全科医生对象
         GeneralPractitioner gp1 = new GeneralPractitioner(101, "Dr.Liu", "General Practitioner", "Outpatient Doctor");
         System.out.println("------------------------------");
@@ -30,6 +30,8 @@ public class A1 {
         Other other2 = new Other(202, "Dr.Han", "Other", "Nutritionist");
         System.out.println("------------------------------");
         other2.printHealthProfessionalInfo();
+
+        
     }
 }
 class HealthProfessional {
@@ -59,6 +61,9 @@ class HealthProfessional {
         System.out.println("Name: " + name);
         System.out.println("Doctor Type: " + doctorType);
         System.out.println("Health Professional Details:");
+    }
+    public String getName() {
+        return name;
     }
 }
 
@@ -128,13 +133,21 @@ class Appointment {
         this.preferredTime = preferredTime;
         this.doctor = doctor;
     }
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public String getPatientPhone() {
+        return patientPhone;
+    }
 
     // 打印预约信息的方法
     public void printAppointmentInfo() {
         System.out.println("Patient Name: " + patientName);
         System.out.println("Patient Phone: " + patientPhone);
         System.out.println("Preferred Time: " + preferredTime);
-        System.out.println("Doctor Information:");
+        System.out.println("Doctor: " + doctor.getName());
+        System.out.println("------------------------------");
         if (doctor != null) {
             doctor.printHealthProfessionalInfo();  // 打印医生的信息
         } else {
