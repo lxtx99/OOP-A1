@@ -61,7 +61,21 @@ public class AssignmentOne {
             }
         }
     }
-    
+    // Method to cancel an appointment based on patient's phone number
+    static void cancelBooking(ArrayList<Appointment> appointments, String patientPhone) {
+        boolean found = false;
+        for (Appointment appointment : appointments) {
+            if (appointment.getPatientPhone().equals(patientPhone)) {
+                appointments.remove(appointment);
+                System.out.println("Appointment for patient " + appointment.getPatientName() + " has been cancelled.");
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Error: No appointment found for phone number " + patientPhone);
+        }
+    }
 }
 class HealthProfessional {
     // 实例变量
