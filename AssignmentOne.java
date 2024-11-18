@@ -51,6 +51,17 @@ public class AssignmentOne {
             System.out.println("Appointment created successfully for " + patientName + " with " + doctor.getName() + " at " + preferredTime);
         }
     }
+    // Method to print all existing appointments
+    public static void printExistingAppointments(ArrayList<Appointment> appointments) {
+        if (appointments.isEmpty()) {
+            System.out.println("No existing appointments.");
+        } else {
+            for (Appointment appointment : appointments) {
+                appointment.printAppointmentDetails();
+            }
+        }
+    }
+    
 }
 class HealthProfessional {
     // 实例变量
