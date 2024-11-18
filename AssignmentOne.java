@@ -40,6 +40,20 @@ public class AssignmentOne {
         // Declare an ArrayList to store appointments
         ArrayList<Appointment> appointments = new ArrayList<>();
         
+        // Create appointments and add them to the list
+        createAppointment(appointments, "Haonan Liu", "1022004", "08:00", gp1);
+        createAppointment(appointments, "Shijie Zhang", "1355006", "10:00", gp2);
+        createAppointment(appointments, "Shaoqian Mu", "1677826", "11:00", other1);
+        createAppointment(appointments, "Thomas", "1022334", "09:00", other2);
+
+        // Print all existing appointments
+        printExistingAppointments(appointments);
+
+        // Cancel an appointment
+        cancelBooking(appointments, "1022334");
+
+        // Print all existing appointments again to show the updated list
+        printExistingAppointments(appointments);
     }
     // Method to create a new appointment and add it to the ArrayList
     public static void createAppointment(ArrayList<Appointment> appointments, String patientName, String patientPhone, String preferredTime, HealthProfessional doctor) {
@@ -184,17 +198,12 @@ class Appointment {
         return patientPhone;
     }
 
-    // 打印预约信息的方法
-    public void printAppointmentInfo() {
+    // Method to print the appointment details
+    public void printAppointmentDetails() {
         System.out.println("Patient Name: " + patientName);
-        System.out.println("Patient Phone: " + patientPhone);
+        System.out.println("Phone: " + patientPhone);
         System.out.println("Preferred Time: " + preferredTime);
         System.out.println("Doctor: " + doctor.getName());
         System.out.println("------------------------------");
-        if (doctor != null) {
-            doctor.printHealthProfessionalInfo();  // 打印医生的信息
-        } else {
-            System.out.println("No doctor selected.");
-        }
     }
 }
