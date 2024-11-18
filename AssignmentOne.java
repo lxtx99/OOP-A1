@@ -46,15 +46,13 @@ public class AssignmentOne {
         createAppointment(appointments, "Shaoqian Mu", "1677826", "11:00", other1);
         createAppointment(appointments, "Thomas", "1022334", "", other2);
 
-        // Print all existing appointments
         printExistingAppointments(appointments);
-
-        // Cancel an appointment
         cancelBooking(appointments, "1022334");
 
         // Print all existing appointments again to show the updated list
         printExistingAppointments(appointments);
     }
+
     // Method to create a new appointment and add it to the ArrayList
     static void createAppointment(ArrayList<Appointment> appointments, String patientName, String patientPhone, String preferredTime, HealthProfessional doctor) {
         if (patientName == null || patientPhone == null || preferredTime == null || doctor == null) {
@@ -92,7 +90,6 @@ public class AssignmentOne {
     }
 }
 class HealthProfessional {
-    // Instance variable
     private int ID;             
     private String name;        
     private String doctorType;  
@@ -113,10 +110,11 @@ class HealthProfessional {
 
     // A method to print all instance variables
     public void printHealthProfessionalInfo() {
-        System.out.println("ID: " + ID);
-        System.out.println("Name: " + name);
-        System.out.println("Doctor Type: " + doctorType);
         System.out.println("Health Professional Details:");
+        System.out.println("Doctor ID: " + ID);
+        System.out.println("Doctor Name: " + name);
+        System.out.println("Doctor Type: " + doctorType);
+
     }
     public String getName() {
         return name;
@@ -124,7 +122,7 @@ class HealthProfessional {
 }
 
 class GeneralPractitioner extends HealthProfessional {
-    private String BusinessScope;  // Added instance variables
+    private String BusinessScope; 
     
     // Default constructor
     public GeneralPractitioner() {
@@ -141,32 +139,32 @@ class GeneralPractitioner extends HealthProfessional {
     @Override
     public void printHealthProfessionalInfo() {
         super.printHealthProfessionalInfo();  
-        System.out.println("BusinessScope: " + BusinessScope);
+        System.out.println("Business Scope: " + BusinessScope);
     }
 }
 class Other extends HealthProfessional {
-    private String specialty; 
+    private String profession; 
 
     // Default constructor
     public Other() {
         super();  
-        this.specialty = "Unknown Specialty";  
+        this.profession = "Unknown Profession";  
     }
 
-    public Other(int ID, String name, String doctorType, String specialty) {
+    public Other(int ID, String name, String doctorType, String profession) {
         super(ID, name, doctorType); 
-        this.specialty = specialty;
+        this.profession = profession;
     }
 
     // Methods for printing details of health professionals
     @Override
     public void printHealthProfessionalInfo() {
         super.printHealthProfessionalInfo();  
-        System.out.println("Specialty: " + specialty);  
+        System.out.println("Profession: " + profession);  
     }
 }
+
 class Appointment {
-    // Instance variable
     private String patientName;       
     private String patientPhone;      
     private String preferredTime;     
@@ -199,7 +197,7 @@ class Appointment {
         System.out.println("Patient Name: " + patientName);
         System.out.println("Phone: " + patientPhone);
         System.out.println("Preferred Time: " + preferredTime);
-        System.out.println("Doctor: " + doctor.getName());
+        System.out.println("Doctor Name: " + doctor.getName());
         System.out.println("------------------------------");
     }
 }
